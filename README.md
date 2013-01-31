@@ -1,4 +1,4 @@
-= Behat documentation (English)
+# Behat documentation (English)
 
 This repository contains the latest version of the documentation 
 found at http://docs.behat.org.
