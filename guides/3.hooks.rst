@@ -42,7 +42,7 @@ Behat Event System
 
 Before understanding what hooks really are and how to use them, you should
 first understand how Behat actually works (on the highest possible level).
-Consider this scheme:
+Consider this diagram:
 
 .. image:: /images/event-system-scheme.png
    :align: center
@@ -60,23 +60,23 @@ Let's explain it a little bit:
    passes them further along to the scenario tester.
 
 5. The scenario tester initializes a context object out of your ``FeatureContext``
-   class and passes it with all scenario step nodes and background step nodes
-   (if the feature has them) further to the step tester.
+   class and passes it, with all scenario step nodes and background step nodes
+   (if the feature has them), further to the step tester.
 
 6. The step tester searches for matching step definitions in the provided
-   context object and when it finds one, executes it.
+   context object and, if it finds one, executes it.
 
 That's basically it! Behat exits when it finishes executing the last step in
 the last scenario of the last parsed feature.
 
-Here's a good question for you to consider: how Behat prints suite execution
-information into the console and collects statistics to be printed after? The
-answer is hidden in `Observer Design Pattern <http://en.wikipedia.org/wiki/Observer_pattern>`_.
+Here's a good question for you to consider: how does Behat print suite execution
+information into the console and collect statistics to be printed after? The
+answer is hidden in the `Observer Design Pattern <http://en.wikipedia.org/wiki/Observer_pattern>`_.
 
 On every point of execution, testers initialize special objects called
-*events* (green texts on the scheme) and send them to a special ``EventDispatcher``
-object (green square on the scheme). Other objects, called *listeners* (blue
-squares on scheme) register on ``EventDispatcher`` to be able to receive those
+*events* (in green text in the diagram) and send them to a special ``EventDispatcher``
+object (green square in the diagram). Other objects, called *listeners* (blue
+squares in the diagram) register on ``EventDispatcher`` to be able to receive those
 events. ``EventDispatcher`` automatically dispatches received events to registered
 listeners that are capable of handling a particular event type.
 
@@ -89,33 +89,33 @@ Hooks
 Behat hooks are a simple way to execute code when core Behat events occur.
 Behat provides 8 event types for you to hook into:
 
-1. ``BeforeSuite`` event happens before any feature in the suite runs. For
+1. The ``BeforeSuite`` event happens before any feature in the suite runs. For
    example, you could use this to setup the project you are testing. This
    event comes with an instance of the ``Behat\Behat\Event\SuiteEvent`` class.
 
-2. ``AfterSuite`` event happens after all features in the suite have run.
+2. The ``AfterSuite`` event happens after all features in the suite have run.
    This event is used internally for statistics printing. This event comes with
    an instance of the ``Behat\Behat\Event\SuiteEvent`` class.
 
-3. ``BeforeFeature`` event occurs before a feature runs. This event comes
+3. The ``BeforeFeature`` event occurs before a feature runs. This event comes
    with an instance of the ``Behat\Behat\Event\FeatureEvent`` class.
 
-4. ``AfterFeature`` event occurs after Behat finishes executing a feature.
+4. The ``AfterFeature`` event occurs after Behat finishes executing a feature.
    This event comes with an instance of the ``Behat\Behat\Event\FeatureEvent``
    class.
 
-5. ``BeforeScenario`` event occurs before a specific scenario will run. This
+5. The ``BeforeScenario`` event occurs before a specific scenario will run. This
    event comes with an instance of the ``Behat\Behat\Event\ScenarioEvent``
    class.
 
-6. ``AfterScenario`` event occurs after Behat finishes executing a scenario.
+6. The ``AfterScenario`` event occurs after Behat finishes executing a scenario.
    This event comes with an instance of the ``Behat\Behat\Event\ScenarioEvent``
    class.
 
-7. ``BeforeStep`` event occurs before a specific step runs. This event comes
+7. The ``BeforeStep`` event occurs before a specific step runs. This event comes
    with an instance of the ``Behat\Behat\Event\StepEvent`` class.
 
-8. ``AfterStep`` event occurs after Behat finishes executing a step. This
+8. The ``AfterStep`` event occurs after Behat finishes executing a step. This
    event comes with an instance of the ``Behat\Behat\Event\StepEvent`` class.
 
 You can hook into any of these events by using annotations on methods in your
@@ -195,8 +195,8 @@ should also be defined as ``public static`` methods:
 
 There are two feature hook types available:
 
-* ``@BeforeFeature`` - gets executed before every feature in suite.
-* ``@AfterFeature`` - gets executed after every feature in suite.
+* ``@BeforeFeature`` - gets executed before every feature in the suite.
+* ``@AfterFeature`` - gets executed after every feature in the suite.
 
 Both hooks receive ``Behat\Behat\Event\FeatureEvent`` as their argument. This
 object has useful methods for you:
