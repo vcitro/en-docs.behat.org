@@ -118,6 +118,28 @@ right for you:
   formatter defaults here. Also, this is the place to specify parameters for
   your custom formatters.
 
+The YAML configuration file supports the same formatter parameters as 
+the ``behat`` tool, so you can give multiple options for e.g. different formatters. 
+This is useful when run in a continuous integration (CI) environment, so you get 
+machine-readable output for JUnit as well as human-readable text in one single run.
+
+An example that generates multiple output formats could look like this:
+
+.. code-block:: yaml
+
+    # behat.yml
+    ci:
+      formatter:
+        name:                   pretty,junit,html
+        parameters:
+          output_path:          null,junit,behat_report.html
+
+This will write pretty text output to the console, one XML file per feature
+to the junit directory and an HTML report to the file behat_report.html. See
+each formatter's documentation for details on what parameters are available,
+optional or mandatory.
+
+
 Colors
 ~~~~~~
 
