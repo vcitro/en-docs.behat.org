@@ -1,10 +1,10 @@
 Behat Documentation
 ===================
 
-Behat is an open source behavior driven development framework for PHP 5.3 & 5.4.
-What's *behavior driven development* you ask? It's the idea that you start
+Behat is an open source behavior-driven development framework for PHP 5.3 and 5.4.
+What is *behavior-driven development*, you ask? It's the idea that you start
 by writing human-readable sentences that describe a feature of your application
-and how it should work.
+and how it should work, and only then implement this behavior in software.
 
 For example, imagine you're about to create the famous UNIX ``ls`` command.
 Before you begin, you describe how the feature should work:
@@ -92,9 +92,9 @@ Other useful resources for learning/using Behat:
 More about Behavior Driven Development
 --------------------------------------
 
-Once you're up and running with Behat, you can learn more about behavioral
-driven development via the following links. Though both tutorials are specific
-to Cucumber, Behat shares a lot with Cucumber and the philosophies are one
+Once you're up and running with Behat, you can learn more about behavior-driven
+development via the following links. Though both tutorials are specific to Cucumber,
+Behat shares a lot with Cucumber and the philosophies are one
 and the same.
 
 * `Dan North's "What's in a Story?" <http://dannorth.net/whats-in-a-story/>`_
