@@ -284,9 +284,10 @@ them if needed.
   accessible from within the method itself by using ``$this->``. The instance
   passed with the event isn't very useful in this case.
 
-* ``getResult()`` - returns the resulting (highest) step run code. ``4`` when
-  an examples row has failed steps, ``3`` when a row has undefined steps, ``2``
-  when a row has pending steps and ``0`` when all steps are passing.
+* ``getResult()`` - returns the resulting (highest) step run code. This returned value
+  is one of StepEvent constants: ``4`` when an examples row has failed steps, ``3`` when
+  a row has undefined steps, ``2`` when a row has pending steps and ``0`` when all steps
+  are passing.
 
 * ``isSkipped()`` - returns ``true`` if the scenario has skipped steps (steps
   that follow **pending**, **undefined** or **failed** steps).
