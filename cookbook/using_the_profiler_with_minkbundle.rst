@@ -48,7 +48,7 @@ the features with this step to avoid misuses) and that the profiler is enabled:
             if (!$driver instanceof SymfonyDriver) {
                 throw new UnsupportedDriverActionException(
                     'You need to tag the scenario with '.
-                    '"@mink:symfony". Using the profiler is not '.
+                    '"@mink:symfony2". Using the profiler is not '.
                     'supported by %s', $driver
                 );
             }
@@ -73,7 +73,7 @@ the features with this step to avoid misuses) and that the profiler is enabled:
 
     .. code-block:: gherkin
 
-        @mink:symfony
+        @mink:symfony2
         Scenario: I should receive an email
 
 Implementing Email Step Logic
