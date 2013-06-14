@@ -56,8 +56,9 @@ the features with this step to avoid misuses) and that the profiler is enabled:
             $profile = $driver->getClient()->getProfile();
             if (false === $profile) {
                 throw new \RuntimeException(
-                    'Emails cannot be tested as the profiler is '.
-                    'disabled.'
+                    'The profiler is disabled. Activate it by setting '.
+                    'framework.profiler.only_exceptions to false in '.
+                    'your config'
                 );
             }
 
