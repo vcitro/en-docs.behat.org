@@ -1,5 +1,5 @@
-Using the Symfony2 Profiler with Behat and MinkBundle
-=====================================================
+Using the Symfony2 Profiler with Behat and Symfony2Extension
+============================================================
 
 Accessing the Symfony2 profiler can be useful to test some parts of your
 web application that does not hit the browser. Assuming it is supposed to
@@ -33,7 +33,7 @@ the features with this step to avoid misuses) and that the profiler is enabled:
 
     use Behat\Mink\Exception\UnsupportedDriverActionException,
         Behat\Mink\Exception\ExpectationException;
-    use Behat\MinkBundle\Driver\SymfonyDriver;
+    use Behat\Symfony2Extension\Driver\KernelDriver;;
 
     use PHPUnit_Framework_ExpectationFailedException as AssertException;
 
@@ -45,7 +45,7 @@ the features with this step to avoid misuses) and that the profiler is enabled:
         public function getSymfonyProfile()
         {
             $driver = $this->getSession()->getDriver();
-            if (!$driver instanceof SymfonyDriver) {
+            if (!$driver instanceof KernelDriver) {
                 throw new UnsupportedDriverActionException(
                     'You need to tag the scenario with '.
                     '"@mink:symfony2". Using the profiler is not '.
@@ -68,9 +68,9 @@ the features with this step to avoid misuses) and that the profiler is enabled:
 
 .. note::
 
-    You can only access the profiler when using the SymfonyDriver which gives
+    You can only access the profiler when using the KernelDriver which gives
     you access to the kernel handling the request. You will need to tag your
-    scenario so that the `symfony` session is used.
+    scenario so that the `symfony2` session is used.
 
     .. code-block:: gherkin
 
