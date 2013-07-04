@@ -216,7 +216,7 @@ This command will print all available definition regular expressions:
 .. image:: /images/--definitions.png
    :align: center
 
-If you want to get extended info bout definitions, use:
+If you want to get extended info about definitions, use:
 
 .. code-block:: bash
 
