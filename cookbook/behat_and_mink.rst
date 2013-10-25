@@ -309,7 +309,7 @@ through Selenium:
       Given I am on "/wiki/Main_Page"
       When I fill in "search" with "Behavior Driv"
       And I wait for the suggestion box to appear
-      Then I should see "Behavior Driven Development"
+      Then I should see "Behavior-driven development"
 
 Now, we need to tell Behat and Mink to run this scenario in a different session
 (with a different browser emulator). Mink comes with a special :doc:`hook </guides/3.hooks>`,
